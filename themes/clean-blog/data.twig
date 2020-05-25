@@ -1,0 +1,6 @@
+{% for page in pages|apply_tag_filter if page.title %}
+    <article>
+        <h2><a href="{{ page.url }}">{{ page.title }}</a></h2>
+        <p>{{ page.description }}</p>
+    </article>
+{% endfor %}

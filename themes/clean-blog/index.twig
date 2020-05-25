@@ -1,0 +1,263 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Ashekur Rahman">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>{{ site_title }}</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="{{ theme_url }}/images/pavicon.png">
+    <link rel="shortcut icon" type="image/ico" href="{{ theme_url }}/images/pavicon.png" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="{{ theme_url }}/css/normalize.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/bootstrap-min.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/owl-carousel-min.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/lity-min.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/font-awesome-min.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/animate.css">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="{{ theme_url }}/css/helper.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/theme.css">
+    <link rel="stylesheet" href="{{ theme_url }}/style.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/responsive.css">
+    <script src="{{ theme_url }}/js/vendor/modernizr-2-8-3-min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".mainmenu-area">
+    <!-- Preloader-Content -->
+    <div class="preloader">
+        <svg viewBox="-2000 -1000 4000 2000">
+            <path id="inf" d="M354-354A500 500 0 1 1 354 354L-354-354A500 500 0 1 0-354 354z"></path>
+            <use xlink:href="#inf" stroke-dasharray="1570 5143" stroke-dashoffset="6713px"></use>
+        </svg>
+    </div>
+    <!-- Mainmenu-area-Start -->
+    <div class="mainmenu-area transparent" data-spy="affix" data-offset-top="197">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 row-flex">
+                    <div class="site-brand">
+                        <a href="#" class="logo">#Datapeople</a>
+                    </div>
+                    <button class="burger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <div class="mainmenu">
+                        <ul class="nav">
+                            <li><a href="#home-area">Home</a></li>
+                            <li><a href="#about-area">Wer wir sind</a></li>
+                            <li><a href="#service-area">Was wir machen</a></li>
+                            <li><a href="#testimonial-area">Unsere Kunden</a></li>
+                            <li class="active"><a href="{{base_url}}">Blog</a></li>
+                            <li><a href="#contact-area">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mainmenu-Area-End -->
+    <header class="site-header" style="background-image: url('{{ theme_url }}/img/header-v3-2.png')">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="page-title" style="text-align:left;">Data Blog</h3>
+                    <div class="sub-title" style="text-align:left;">
+                        <span>Über Daten</span>, <span>Medien</span> und <span>Menschen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    {% set tag = url_param('tag', 'string') %}
+    <div class="blog-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="posts-list">
+                        {% for page in pages(depthOffset=-1)|apply_tag_filter|sort_by("time")|reverse if not page.hidden %}
+                        {% if tag %}
+                            {% set pageTags = page.meta.tags|split(',')%}
+                            {% if tag in pageTags %}
+                                <div class="post-single">
+                                    <a class="post-media" href="{{page.url}}">
+                                        <figure>
+                                            <img src="{{ base_url }}/content/{{ page.meta.img }}" alt="">
+                                        </figure>
+                                    </a>
+                                    <div class="post-content">
+                                        <div class="post-meta">
+                                            <span class="author meta-item"><i title="Post Author" class="fa fa-user-o"></i> AR_Hridoy</span>
+                                            <span class="meta-item"><i class="fa fa-clock-o"></i> <a href="">{{ page.date_formatted }}</a></span>
+                                            <span class="cat-list meta-item">
+                                                <i class="fa fa-tags"></i>
+                                                {% for tag in page.meta.tags|split(',') %}
+                                                    <a href="{{ base_url }}?tag={{tag}}" rel="category tag">{{tag}}</a>,
+                                                {% endfor %}
+                                            </span>
+                                        </div>
+                                        <h2 class="post-title"><a href="{{ page.url }}" rel="bookmark">{{ page.title }}</a></h2>
+                                        <div class="post-desc">
+                                            <p>{{ page.description }}</p>
+                                        </div> <a href="{{ page.url }}" class="bttn-more">Mehr lesen</a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% else %}
+                                <div class="post-single">
+                                    <a class="post-media" href="{{page.url}}">
+                                        <figure>
+                                            <img src="{{ base_url }}/content/{{ page.meta.img }}" alt="">
+                                        </figure>
+                                    </a>
+                                    <div class="post-content">
+                                        <div class="post-meta">
+                                            <span class="author meta-item"><i title="Post Author" class="fa fa-user-o"></i> AR_Hridoy</span>
+                                            <span class="meta-item"><i class="fa fa-clock-o"></i> <a href="">{{ page.date_formatted }}</a></span>
+                                            <span class="cat-list meta-item">
+                                                <i class="fa fa-tags"></i>
+                                                {% for tag in page.meta.tags|split(',') %}
+                                                    <a href="{{ base_url }}?tag={{tag}}" rel="category tag">{{tag}}</a>,
+                                                {% endfor %}
+                                            </span>
+                                        </div>
+                                        <h2 class="post-title"><a href="{{ page.url }}" rel="bookmark">{{ page.title }}</a></h2>
+                                        <div class="post-desc">
+                                            <p>{{ page.description }}</p>
+                                        </div> <a href="{{ page.url }}" class="bttn-more">Mehr lesen</a>
+                                    </div>
+                                </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <!-- Post-Pagination -->
+
+                          
+
+                    {% if page_number > 1 %}
+                    <nav class="navigation pagination">
+                        <div class="nav-links">
+                            <a class="previus page-numbers" href="{{ base_url }}/{{ page_indicator }}/{{ page_number - 1 }}">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        </div>
+                    </nav>
+                    {% endif %}
+                    
+                    {% if page_number < total_pages %} 
+                    <nav class="navigation pagination">
+                        <div class="nav-links">
+                            <a class="next page-numbers" href="{ base_url }}/{{ page_indicator }}/{{ page_number + 1 }}">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </nav>
+                    {% endif %}
+
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <div class="hidden visible-xs visible-sm space-30"></div>
+                    <aside class="sidebar">
+                        <div class="widget widget_categories">
+                            <h3 class="widget-title">Kategorien</h3>
+                            <ul>
+                                {% if tag %}
+                                    <li class="cat-item cat-item-17"><a href="{{base_url}}">Alles Anzeigen</a></li>
+                                {% endif %}
+                                <li class="cat-item cat-item-17"><a href="{{base_url}}/?tag=daten">Daten</a></li>
+                                <li class="cat-item cat-item-18"><a href="{{base_url}}/?tag=medien">Medien</a></li>
+                                <li class="cat-item cat-item-28"><a href="{{base_url}}/?tag=medien">Menschen</a></li>
+                                <li class="cat-item cat-item-29"><a href="{{base_url}}/?tag=tableau">Tableau</a></li>
+                                <li class="cat-item cat-item-48"><a href="{{base_url}}/?tag=viz">DataViz</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer-Area-Start -->
+    <footer class="footer-area v3">
+        <div class="footer-bottom section-bg v3" style="background-image: url('{{ theme_url }}/img/price-bg-v3.png'); background-position: top center;">
+            <div class="container">
+                <!-- Footer-Widget-Start -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget">
+                            <h4 class="widget-title">About Us</h4>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget">
+                            <h4 class="widget-title">Quick Link</h4>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Features</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Contact Us!</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget">
+                            <h4 class="widget-title">Support</h4>
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget">
+                            <h4 class="widget-title">Social</h4>
+                            <p>Please connect with our social profiles.</p>
+                            <div class="space-10"></div>
+                            <div class="social-menu">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer-Widget-End -->
+            </div>
+        </div>
+    </footer>
+    <!-- Footer-Area-End -->
+    <!--Vendor-JS-->
+    <script src="{{ theme_url }}/js/vendor/jquery-1-12-4-min.js"></script>
+    <!--Plugin-JS-->
+    <script src="{{ theme_url }}/js/vendor/bootstrap-min.js"></script>
+    <script src="{{ theme_url }}/js/owl-carousel-min.js"></script>
+    <script src="{{ theme_url }}/js/ajaxchimp.js"></script>
+    <script src="{{ theme_url }}/js/lity-min.js"></script>
+    <script src="{{ theme_url }}/js/click-effect.js"></script>
+    <script src="{{ theme_url }}/js/mouse-effect.js"></script>
+    <script src="{{ theme_url }}/js/scrollUp-min.js"></script>
+    <script src="{{ theme_url }}/js/wow-min.js"></script>
+    <!--Main-active-JS-->
+    <script src="{{ theme_url }}/js/main.js"></script>
+</body>
+
+</html>

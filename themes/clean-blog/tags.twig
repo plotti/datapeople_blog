@@ -1,0 +1,26 @@
+{% extends "index.twig" %}
+
+{% set tag = url_param('tag', 'string') %}
+{% set tags = get_all_tags() %}
+
+{% block content %}
+{{ parent() }}
+{% if tag %}
+    <ul>
+    {% for page in pages if page.title and tags and not (page.id ends with 'index') %}
+        {% set pageTags = page.meta.tags|split(',') %}
+        {% if tag in pageTags %}
+            <li><a href="{{ page.url }}">
+            {{ page.title }} - {{ page.meta.tags }}</a>
+            </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <ul>
+    {% for tag in tags %}
+        <li><a href="{{current_page.url}}/?tag={{ tag }}">{{ tag }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock content %}

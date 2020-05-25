@@ -1,0 +1,265 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Ashekur Rahman">
+    <meta name="description" content="">
+    <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
+    <title>{{ meta.title }} - {{ site_title }}</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" href="{{ theme_url }}/images/pavicon.png">
+    <link rel="shortcut icon" type="image/ico" href="{{ theme_url }}/images/pavicon.png" />
+    <!-- Plugin-CSS -->
+    <link rel="stylesheet" href="{{ theme_url }}/css/normalize.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/bootstrap-min.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/owl-carousel-min.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/lity-min.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/font-awesome-min.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/animate.css">
+    <!-- Main-Stylesheets -->
+    <link rel="stylesheet" href="{{ theme_url }}/css/helper.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/theme.css">
+    <link rel="stylesheet" href="{{ theme_url }}/style.css">
+    <link rel="stylesheet" href="{{ theme_url }}/css/responsive.css">
+    <script src="{{ theme_url }}/js/vendor/modernizr-2-8-3-min.js"></script>
+
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body data-spy="scroll" data-target=".mainmenu-area">
+    <!-- Preloader-Content -->
+    <div class="preloader">
+        <svg viewBox="-2000 -1000 4000 2000">
+            <path id="inf" d="M354-354A500 500 0 1 1 354 354L-354-354A500 500 0 1 0-354 354z"></path>
+            <use xlink:href="#inf" stroke-dasharray="1570 5143" stroke-dashoffset="6713px"></use>
+        </svg>
+    </div>
+    <!-- Mainmenu-area-Start -->
+    <div class="mainmenu-area transparent" data-spy="affix" data-offset-top="197">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 row-flex">
+                    <div class="site-brand">
+                        <a href="#" class="logo">#Datapeople</a>
+                    </div>
+                    <button class="burger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+                    <div class="mainmenu">
+                        <ul class="nav">
+                            <li><a href="#home-area">Home</a></li>
+                            <li><a href="#about-area">Wer wir sind</a></li>
+                            <li><a href="#service-area">Was wir machen</a></li>
+                            <li><a href="#testimonial-area">Unsere Kunden</a></li>
+                            <li class="active"><a href="{{ base_url }}">Blog</a></li>
+                            <li><a href="#contact-area">Kontakt</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Mainmenu-Area-End -->
+    <header class="site-header" style="background-image: url('{{ theme_url }}/img/header-v3-2.png')">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3 class="page-title" style="text-align:left;">Data Blog</h3>
+                    <div class="sub-title" style="text-align:left;">
+                        <span>Über Daten</span>, <span>Medien</span> und <span>Menschen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <section class="blog-area section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="text-box">
+                    <h2 class="title">{{ meta.title }}</h2>
+                    </div>
+                    <div class="post-single post-121 post type-post status-publish format-standard has-post-thumbnail hentry category-bricks category-builder category-building tag-building tag-carpentry tag-doors">
+
+                        <figure class="post-thumb">
+                            <img src="{{ base_url }}/content/{{ meta.img }}" alt="">
+                        </figure>
+                        <div class="post-content">
+                            <div class="post-desc">
+                                {{ content }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="post-footer-meta">
+                        <span class="author meta-item">
+                            <i class="fa fa-user-o"></i>
+                            {{ meta.author }}
+                        </span>
+                        <span class="post-date meta-item">
+                            <i class="fa fa-clock-o"></i>
+                            <a href="#">{{ meta.date }}</a>
+                        </span>
+                        <span class="tags-list meta-item">
+                            <i title="Tags" class="fa fa-tags"></i>
+                            {% for tag in meta.tags %}
+                                <a href="#" rel="tag">{{tag}}</a> ,
+                            {% endfor %}
+                        </span>
+                    </a></span>
+                    </div>
+                
+
+                    <div id="comments" class="comment_area">
+                        <div class="comment_form_content">
+                            <div id="respond" class="comment-respond">
+                                <h2 class="info">
+                                    Kommentieren
+                                </h2>
+                                <div id="disqus_thread"></div>
+                                <script>
+
+                                /**
+                                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                                /*
+                                var disqus_config = function () {
+                                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                                };
+                                */
+                                (function() { // DON'T EDIT BELOW THIS LINE
+                                var d = document, s = d.createElement('script');
+                                s.src = 'https://datapeople.disqus.com/embed.js';
+                                s.setAttribute('data-timestamp', +new Date());
+                                (d.head || d.body).appendChild(s);
+                                })();
+                                </script>
+                                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                            </div><!-- #respond -->
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="info">Ähnliche Beiträge</h4>
+
+                        <div class="row">
+                            {% set similar_pages = [] %}
+                            {% for tag in meta.tags %}
+                                {% for page in pages if page.title and page.meta.tags %}
+                                    {% if tag in page.meta.tags and not (page.id ends with 'index') and page.id != current_page.id %}
+                                        {% if page not in similar_pages %}
+                                            {% set similar_pages = similar_pages|merge([page]) %}
+                                        {% endif %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+        
+                            <div class="widget">
+                            {% for page in similar_pages %}
+                                <div class="popular-post col-md-3">
+                                    <div class="item">
+                                        <a href="#" class="post-thumb">
+                                            <img src="{{ base_url }}/content/{{ page.meta.img }}" alt="">
+                                        </a>
+                                        <div class="content">
+                                            <div class="post-meta"> <span class="author"><i class="fa fa-user"></i> {{ page.author }}</span>
+                                            <h5 class="post-title">
+                                                <a href="{{ page.url }}">{{ page.title }}</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div >
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- Footer-Area-Start -->
+    <footer class="footer-area v3">
+        <div class="footer-bottom section-bg v3" style="background-image: url('{{ theme_url }}/img/price-bg-v3.png'); background-position: top center;">
+            <div class="container">
+                <!-- Footer-Widget-Start -->
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget">
+                            <h4 class="widget-title">About Us</h4>
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget">
+                            <h4 class="widget-title">Quick Link</h4>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Features</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Contact Us!</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget">
+                            <h4 class="widget-title">Support</h4>
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms</a></li>
+                                <li><a href="#">FAQ</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="widget">
+                            <h4 class="widget-title">Social</h4>
+                            <p>Please connect with our social profiles.</p>
+                            <div class="space-10"></div>
+                            <div class="social-menu">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-google-plus"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer-Widget-End -->
+            </div>
+        </div>
+    </footer>
+    <!-- Footer-Area-End -->
+    <!--Vendor-JS-->
+    <script src="{{ theme_url }}/js/vendor/jquery-1-12-4-min.js"></script>
+    <!--Plugin-JS-->
+    <script src="{{ theme_url }}/js/vendor/bootstrap-min.js"></script>
+    <script src="{{ theme_url }}/js/owl-carousel-min.js"></script>
+    <script src="{{ theme_url }}/js/ajaxchimp.js"></script>
+    <script src="{{ theme_url }}/js/lity-min.js"></script>
+    <script src="{{ theme_url }}/js/click-effect.js"></script>
+    <script src="{{ theme_url }}/js/mouse-effect.js"></script>
+    <script src="{{ theme_url }}/js/scrollUp-min.js"></script>
+    <script src="{{ theme_url }}/js/wow-min.js"></script>
+    <!--Main-active-JS-->
+    <script src="{{ theme_url }}/js/main.js"></script>
+    <script id="dsq-count-scr" src="//datapeople.disqus.com/count.js" async></script>
+</body>
+
+</html>
