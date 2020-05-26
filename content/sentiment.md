@@ -1,7 +1,7 @@
 ---
 Title: Sentiment detection with Keras, word embeddings and LSTM deep learning networks. 
 Description: How to get an overview over SaaS and open source options for sentiment detection. Learn an easy and accurate method relying on word embeddings with LSTMs that allows you to do state of the art sentiment analysis with deep learning in Keras.
-Date: 11 December 2019
+Date: 30 August 2019
 Author: Thomas Ebermann
 Img: laugh.jpg
 Template: post
