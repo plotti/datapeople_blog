@@ -52,6 +52,8 @@ assets_url: ~                       # Pico will try to guess the URL to the asse
 plugins_url: ~                      # Pico will try to guess the URL to the plugins dir of your installation;
                                     #     If this fails, override it here. Example: https://example.com/pico/plugins/
 DummyPlugin.enabled: false          # Force the plugin "DummyPlugin" to be disabled
+pico_edit_password: 316D2974E260F77AD1365BA28693EDE8CF641D14ED50BCCBE6C6D501AF234FBF
+pico_edit_default_author: Thomas Ebermann
 
 ##
 # Custom
