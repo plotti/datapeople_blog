@@ -11,8 +11,8 @@
     <!-- Title -->
     <title>{{ site_title }}</title>
     <!-- Place favicon.ico in the root directory -->
-    <link rel="apple-touch-icon" href="{{ theme_url }}/images/pavicon.png">
-    <link rel="shortcut icon" type="image/ico" href="{{ theme_url }}/images/pavicon.png" />
+    <link rel="apple-touch-icon" href="{{ theme_url }}/img/pavicon.png">
+    <link rel="shortcut icon" type="image/ico" href="{{ theme_url }}/img/pavicon.png" />
     <!-- Plugin-CSS -->
     <link rel="stylesheet" href="{{ theme_url }}/css/normalize.css">
     <link rel="stylesheet" href="{{ theme_url }}/css/bootstrap-min.css">
@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-xs-12 row-flex">
                     <div class="site-brand">
-                        <a href="#" class="logo">#Datapeople</a>
+                        <a href="https://datapeople.ch/" class="logo">#Datapeople</a>
                     </div>
                     <button class="burger">
                         <span class="bar"></span>
@@ -56,12 +56,12 @@
                     </button>
                     <div class="mainmenu">
                         <ul class="nav">
-                            <li><a href="#home-area">Home</a></li>
-                            <li><a href="#about-area">Wer wir sind</a></li>
-                            <li><a href="#service-area">Was wir machen</a></li>
-                            <li><a href="#testimonial-area">Unsere Kunden</a></li>
-                            <li class="active"><a href="{{base_url}}">Blog</a></li>
-                            <li><a href="#contact-area">Kontakt</a></li>
+                            <li><a href="https://datapeople.ch/#home-area">Home</a></li>
+                            <li><a href="https://datapeople.ch/#about-area">Wer wir sind</a></li>
+                            <li><a href="https://datapeople.ch/#what-we-do-area">Was wir machen</a></li>
+                            <li><a href="https://datapeople.ch/#service-area">Unsere Kunden</a></li>
+                            <li class="active"><a href="{{ base_url }}">Blog</a></li>
+                            <li><a href="https://datapeople.ch/#contact-area">Kontakt</a></li>
                         </ul>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                                     <div class="post-content">
                                         <div class="post-meta">
                                             <span class="author meta-item"><i title="Post Author" class="fa fa-user-o"></i> AR_Hridoy</span>
-                                            <span class="meta-item"><i class="fa fa-clock-o"></i> <a href="">{{ page.date_formatted }}</a></span>
+                                            <span class="meta-item"><i class="fa fa-clock-o"></i> <a href="">{{ page.date|date("d.m.Y") }}</a></span>
                                             <span class="cat-list meta-item">
                                                 <i class="fa fa-tags"></i>
                                                 {% for tag in page.meta.tags|split(',') %}
@@ -127,7 +127,7 @@
                                     <div class="post-content">
                                         <div class="post-meta">
                                             <span class="author meta-item"><i title="Post Author" class="fa fa-user-o"></i> AR_Hridoy</span>
-                                            <span class="meta-item"><i class="fa fa-clock-o"></i> <a href="">{{ page.date_formatted }}</a></span>
+                                            <span class="meta-item"><i class="fa fa-clock-o"></i> <a href="">{{ page.date|date("d.m.Y") }}</a></span>
                                             <span class="cat-list meta-item">
                                                 <i class="fa fa-tags"></i>
                                                 {% for tag in page.meta.tags|split(',') %}
@@ -192,30 +192,36 @@
     </div>
 
     <!-- Footer-Area-Start -->
-    <footer class="footer-area v3">
-        <div class="footer-bottom section-bg v3" style="background-image: url('{{ theme_url }}/img/price-bg-v3.png'); background-position: top center;">
+    <footer class="footer-area v3" id="contact-area">
+        <div class="footer-bottom section-bg v3" style="background-image: url('{{theme_url}}/img/price-bg-v3.png'); background-position: top center;">
             <div class="container">
                 <!-- Footer-Widget-Start -->
                 <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-3">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="widget">
-                            <h4 class="widget-title">About Us</h4>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                            <h4 class="widget-title">Über uns</h4>
+                            <p>Datapeople GmbH
+                            <p>Geschäftsführung: Siri Fischer (Vorsitz) & Dr. Thomas Ebermann
+                            <p>UID MWST: CHE-394.497.750
+                            <p>Bankverbindung: UBS AG
+                            <p>IBAN: CH31 0022 5225 1209 5001 R
+                            <p><a href="https://zh.chregister.ch/cr-portal/auszug/auszug.xhtml?uid=CHE-394.497.750">Eintrag im Handelsregister Zürich</a>
+                            </p>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="widget">
-                            <h4 class="widget-title">Quick Link</h4>
+                            <h4 class="widget-title">Quick Links</h4>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Features</a></li>
-                                <li><a href="#">Pricing</a></li>
-                                <li><a href="#">Team</a></li>
-                                <li><a href="#">Contact Us!</a></li>
+                                <li><a href="https://datapeople.ch/">Home</a></li>
+                                <li><a href="https://datapeople.ch/#about-area">Wer wir sind</a></li>
+                                <li><a href="https://datapeople.ch/#what-we-do-area">Was wir machen</a></li>
+                                <li><a href="https://datapeople.ch/#service-area">Unsere Kunden</a></li>
+                                <li><a href="https://datapeople.ch/#contact-area">Kontakt</a></li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
+                    <!-- <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="widget">
                             <h4 class="widget-title">Support</h4>
                             <ul>
@@ -225,23 +231,33 @@
                                 <li><a href="#">Support</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="widget">
                             <h4 class="widget-title">Social</h4>
-                            <p>Please connect with our social profiles.</p>
-                            <div class="space-10"></div>
-                            <div class="social-menu">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            <p>Sie finden uns auch auf folgenden Platformen</p>
+                            <div class="space-30"></div>
+                            <div >
+<!--                                 <a href="#"><i class="fa fa-facebook"></i></a>
+                                
+ -->                            <a href="https://www.linkedin.com/in/sirifischer">Siri Fischer:   <i class="fa fa-linkedin"></i></a></br>
+                                <a href="https://www.linkedin.com/in/dr-thomas-ebermann-a5ba0614/">Thomas Ebermann:   <i class="fa fa-linkedin"></i></a>   <a href="http://twitter.com/plotti"><i class="fa fa-twitter"></i></a></br>
+                                <a href="https://www.linkedin.com/in/jana-ebermann-20a88267/">Jana Ebermann:   <i class="fa fa-linkedin"></i></a></br>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Footer-Widget-End -->
             </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <span class="copyright">&copy; 2020 Datapeople.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </footer>
     <!-- Footer-Area-End -->
