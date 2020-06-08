@@ -47,7 +47,7 @@ So imagine a kid walking up to an area and then trying to spot the animal in ord
 
 Well nice idea you say, but how am I going to make that magical device that will recognize animals, especially the “weird” ones e.g. the oryx in the title :) . The answer is …. of course …. deep learning. 
 
-In recent years you have probably noticed the rise of deep learning in different areas of machine learning and noticed their practical applications in your everyday life. In fact I have covered a couple of these practical applications such as [state of the art sentiment detection](https://www.liip.ch/en/blog/sentiment-detection-with-keras-word-embeddings-and-lstm-deep-learning-networks) or [survival rates for structured data](https://www.liip.ch/en/blog/tensorflow-and-tflearn-or-can-deep-learning-predict-if-dicaprio-could-have-survived-the-titanic) or [automatic speech recognition]( https://www.liip.ch/en/blog/betti-bossi-recipe-assistant-prototype-with-automatic-speech-recognition-asr-and-text-to-speech-tts-on-socket-io) and [text to speech applications](https://www.liip.ch/en/blog/recipe-assistant-prototype-with-asr-and-tts-on-socket-io-part-3-developing-the-prototype) in our blog. 
+In recent years you have probably noticed the rise of deep learning in different areas of machine learning and noticed their practical applications in your everyday life. In fact I have covered a couple of these practical applications such as [state of the art sentiment detection](https://blog.datapeople.ch/sentiment). 
 
 ### Deep learning image categorization task
 

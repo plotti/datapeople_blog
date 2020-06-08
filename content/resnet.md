@@ -9,7 +9,7 @@ Tags: data,blog
 ---
 ### Short Recap from Part 1
 
-In the [last blog post](https://www.liip.ch/en/blog/poke-zoo-or-making-deep-learning-tell-oryxes-apart-from-lamas-in-a-zoo-part-1-the-idea-and-concepts) I briefly discussed the potential of using deep learning to build a zoo pokedex app that could be used to motivate zoo goers to engage with the animals and the information. We also discussed the [imagenet competition](http://image-net.org) and how deep learning has drastically changed the image recognition game. We went over the two main tricks that deep learning architectures do, namely convolutions and pooling, that allow such deep learning networks to perform extremely well. Last but not least we realized that all you have to do these days is to stand on the shoulders of giants by using the existing networks (e.g. Resnet50)  to be able to write applications that have a similar state of the art precision.  So finally in this blog post it’s time to put these giants to work for us.
+In the [last blog post](https://blog.datapeople.ch/lamas) I briefly discussed the potential of using deep learning to build a zoo pokedex app that could be used to motivate zoo goers to engage with the animals and the information. We also discussed the [imagenet competition](http://image-net.org) and how deep learning has drastically changed the image recognition game. We went over the two main tricks that deep learning architectures do, namely convolutions and pooling, that allow such deep learning networks to perform extremely well. Last but not least we realized that all you have to do these days is to stand on the shoulders of giants by using the existing networks (e.g. Resnet50)  to be able to write applications that have a similar state of the art precision.  So finally in this blog post it’s time to put these giants to work for us.
 
 ### Goal
 
@@ -88,7 +88,7 @@ Normally everyone would tell you that you need definitely more image material be
 
 A really neat handy trick that seems to be prevalent everyday now is to take the images that you already have and change them slightly artificially. That means rotating them, changing the perspective, zooming in on them. What you end up is, that instead of having one image of a llama, you’ll have 20 pictures of that animal, just every picture being slightly different from the original one. This trick allows you to create more variation without actually having to download more material. It works quite well, but is definitely inferior to simply having more data.  
 
-We will be using [Keras](http://keras.io) a deep learning library on top of tensorflow, that we have used before in [other](https://www.liip.ch/en/blog/tensorflow-and-tflearn-or-can-deep-learning-predict-if-dicaprio-could-have-survived-the-titanic) blog posts to [create a good sentiment detection](https://www.liip.ch/en/blog/sentiment-detection-with-keras-word-embeddings-and-lstm-deep-learning-networks). In the domain of image recognition Keras can really show its strength, by already having built in methods to do image data generation for us, without having to involve any third party tools. 
+We will be using [Keras](http://keras.io) a deep learning library on top of tensorflow, that we have used before to [create a good sentiment detection](https://blog.datapeople.ch/sentiment). In the domain of image recognition Keras can really show its strength, by already having built in methods to do image data generation for us, without having to involve any third party tools. 
 
 ```python
 # Creating a Image data generator

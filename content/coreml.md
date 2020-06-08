@@ -9,7 +9,7 @@ Tags: data,blog
 ---
 # Creating a CoreML model from A-Z in less than 10 Steps
 
-This is the third part of our deep learning on mobile phones series. In part one I have shown you [the two main tricks on how to use convolutions and pooling to train deep learning networks](https://www.liip.ch/en/blog/poke-zoo-or-making-deep-learning-tell-oryxes-apart-from-lamas-in-a-zoo-part-1-the-idea-and-concepts). In part two I have shown you [how to train existing deep learning networks like resnet50 to detect new objects](https://www.liip.ch/en/blog/zoo-pokedex-part-2-hands-on-with-keras-and-resnet50). In part three I will now show you how to train a deep learning network, how to convert it in the CoreML format and then deploy it on your mobile phone! 
+This is the third part of our deep learning on mobile phones series. In part one I have shown you [the two main tricks on how to use convolutions and pooling to train deep learning networks](https://blog.datapeople.ch/lamas). In part two I have shown you [how to train existing deep learning networks like resnet50 to detect new objects](https://blog.datapeople.ch/resnet). In part three I will now show you how to train a deep learning network, how to convert it in the CoreML format and then deploy it on your mobile phone! 
 
 TLDR: I will show you how to create your own iPhone app from A-Z that recognizes handwritten numbers: 
 
@@ -112,7 +112,7 @@ Originally the data is encoded in such a way that the Y-Vector contains the numb
 
 ## 6. Modeling the network
 
-Now it is time to define a convolutional network to distinguish those numbers. Using the [convolution and pooling tricks from part one of this series](https://www.liip.ch/en/blog/poke-zoo-or-making-deep-learning-tell-oryxes-apart-from-lamas-in-a-zoo-part-1-the-idea-and-concepts) we can model a network that will be able to distinguish numbers from each other. 
+Now it is time to define a convolutional network to distinguish those numbers. Using the [convolution and pooling tricks from part one of this series](https://blog.datapeople.ch/resnet) we can model a network that will be able to distinguish numbers from each other. 
 
 ```python
 # defining the model
@@ -382,7 +382,7 @@ Finally it's time to deploy the model on your iPhone. You will need to connect i
 
 ## 9. Try it out
 
-After having had to jump through so many hoops it is finally time to try out our app. If you are starting it for the first time it will ask you to allow it to use your camera (after all we have placed this info there). Then make sure to hold your iPhone sideways, since it matters on how we trained the network. We have not been using any augmentation techniques, so our model is unable to recognize numbers that are “lying on the side”. We could make our model better by applying these techniques as I have shown in [this blog article)](https://www.liip.ch/en/blog/zoo-pokedex-part-2-hands-on-with-keras-and-resnet50).
+After having had to jump through so many hoops it is finally time to try out our app. If you are starting it for the first time it will ask you to allow it to use your camera (after all we have placed this info there). Then make sure to hold your iPhone sideways, since it matters on how we trained the network. We have not been using any augmentation techniques, so our model is unable to recognize numbers that are “lying on the side”. We could make our model better by applying these techniques as I have shown in [this blog article)](https://blog.datapeople.ch/resnet).
 
 A second thing you might notice is, that the app always recognizes some number, as there is no “background” class. In order to fix this, we could train the model additionally on some random images, which we classify as the background class. This way our model would be better equipped to tell apart if it is seeing a number or just some random background. 
 
@@ -392,7 +392,7 @@ A second thing you might notice is, that the app always recognizes some number, 
 
 Obviously this has is a very long blog post. Yet I wanted to get all the necessary info into one place in order to show other mobile devs how easy it is to create your own deep learning computer vision applications. 
 
-In fact we are currently innovating together by creating an app that [will be able to recognize](https://www.liip.ch/en/blog/zoo-pokedex-part-2-hands-on-with-keras-and-resnet50) [animals in a zoo](https://www.liip.ch/en/blog/poke-zoo-or-making-deep-learning-tell-oryxes-apart-from-lamas-in-a-zoo-part-1-the-idea-and-concepts) and working on another small fun game that lets two people doodle against each other: You will be given a task, as in “draw an apple” and the person who draws the apple faster in such a way that it is recognised by the deep learning model wins. 
+In fact we are currently innovating together by creating an app that [will be able to recognize](https://blog.datapeople.ch/resnet) [animals in a zoo](https://blog.datapeople.ch/lamas) and working on another small fun game that lets two people doodle against each other: You will be given a task, as in “draw an apple” and the person who draws the apple faster in such a way that it is recognised by the deep learning model wins. 
 
 Beyond such fun innovation projects the possibilities are endless, but always depend on the context of the business and the users. Obviously the saying “if you have a hammer every problem looks like a nail to you” applies here too, not every app will benefit from having computer vision on board, and not all apps using computer vision are [useful ones](https://www.theverge.com/2017/6/26/15876006/hot-dog-app-android-silicon-valley) as some of you might know from the famous Silicon Valley episode. 
 
